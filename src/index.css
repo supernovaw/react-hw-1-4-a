@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu Mono', sans-serif;
+  color: black;
+  background-color: white;
+}
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Mono'), url(https://fonts.gstatic.com/s/ubuntumono/v14/KFOjCneDtsqEr0keqCMhbBc9.ttf) format('truetype');
+}
