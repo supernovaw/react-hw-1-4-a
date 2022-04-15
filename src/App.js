@@ -24,11 +24,13 @@ const ColorConverter = () => {
   }
 
   const handleChange = e => {
-    const rgb = hexToRgb(e.target.value);
-    const textToSet = rgb === null ? "" : `rgb(${rgb.join(", ")})`;
+    const value = e.target.value;
+    const rgb = hexToRgb(value);
+    const rgbStyle = rgb === null ? "" : `rgb(${rgb.join(", ")})`;
+    const invalidHex = value.startsWith("#") && value.length >= 7 && rgb === null;
 
-    if (textToSet !== '') e.target.parentElement.style.backgroundColor = textToSet;
-    labelRef.current.textContent = textToSet;
+    if (rgb !== null) e.target.parentElement.style.backgroundColor = rgbStyle;
+    labelRef.current.textContent = invalidHex ? "bad hex rgb" : rgbStyle;
   }
 
   return (
